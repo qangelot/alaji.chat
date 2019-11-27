@@ -147,3 +147,21 @@ body .content {
   cursor: pointer;
   font-weight: 600;
 }
+
+.message{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.avatar{
+  margin-right: 20px;
+}
+.pseudo{
+  font-size: 1.4rem;
+  color: yellow;
+  font-weight: bold;
+}
+.text{
+  font-size: 1.2rem;
+}
