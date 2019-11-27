@@ -64,7 +64,7 @@ body .content {
   flex-direction: column;
 }
 
-.online .connected,
+.online .user,
 .chat .messages {
   overflow: auto;
   margin: 0 -15px;

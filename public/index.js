@@ -1,20 +1,6 @@
 let pseudo = null
 let avatar = '/images/avatars/1.svg'
 
-function connect () {
-  const socket = io({
-    query: {
-      pseudo: pseudo,
-      avatar: avatar
-    }
-  })
-}
-
-document.getElementById('send').addEventListener('submit', function (e) {
-  e.preventDefault()
-  // Send message
-})
-
 document.querySelectorAll('[data-avatar]').forEach(function (element) {
   element.addEventListener('click', function (e) {
     e.preventDefault()
@@ -30,8 +16,7 @@ document.querySelector('.init form').addEventListener('submit', function (e) {
   if (value.length) {
     pseudo = value
     document.querySelector('.init').remove()
-    document.querySelector('[data-avatar]').setAttribute('src', avatar)
-    document.querySelector('[data-pseudo]').textContent = pseudo
+    window.location = `./chat.html?pseudo=${pseudo}&avatar=${avatar}`
     connect()
   }
 })

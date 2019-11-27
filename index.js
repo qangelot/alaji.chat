@@ -15,7 +15,7 @@ io.on('connection', function(socket) {
   const avatar = socket.handshake.query.avatar
 
   console.log(`${pseudo} s'est connecté !`)
-  
+
   socket.on('disconnect', function () {
     console.log(`${pseudo} s'est déconnecté !`)
   })

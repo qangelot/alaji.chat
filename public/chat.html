@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/index.css">
+  </head>
+  <body>
+    <div class="container-fluid h-100">
+      <div class="row h-100">
+        <div class="col-3 online">
+          <h2>En ligne</h2>
+          <div id="users" class="users"></div>
+        </div>
+        <div class="col-9 chat">
+          <h1># Général</h1>
+          <div id="messages" class="messages"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 user">
+          <img data-avatar>
+          <div data-pseudo></div>
+        </div>
+        <div class="col-9">
+          <form autocomplete="off" action="#" id="send" class="send">
+            <input id="send" type="text" placeholder="Envoyer un message à # Général">
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/chat.js"></script>
+  </body>
+</html>
