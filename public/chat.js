@@ -8,11 +8,33 @@ function getHtml (data) {
 }
 
 function addMessage (data) {
-  document.getElementById('messages').append(getHtml(data))
+  const date = new Date(data.date)
+  const value = `
+    <div class="message">
+      <div class="avatar">
+        <img src="${data.avatar}" width="40px">
+      </div>
+      <div class="content">
+          <div class="pseudo"> ${data.pseudo}, ${date.toLocaleDateString()} à ${date.toLocaleTimeString()} : </span></div>
+          <div class="text"> ${data.message} </div>
+
+          </div>
+      </div>
+    </div>
+    `
+  document.getElementById('messages').append(getHtml(value))
 }
 
-function addUser (data) {
-  document.getElementById('users').append(getHtml(data))
+function addUser(data) {
+  const value = `
+  <div class="client">
+    <div class="avatar">
+      <img src="${data.avatar}" width="40px">
+    </div>
+      <div class="pseudo"> ${data.pseudo} </div>
+  </div>`
+
+  document.getElementById('users').append(getHtml(value))
 }
 
 const urlParams = new URLSearchParams(window.location.search)
@@ -26,18 +48,22 @@ const socket = io({
   }
 })
 
+socket.on('clients', function(data) {
+  document.getElementById('users').innerHTML=''
+  data.forEach(function(client){
+    addUser(client)
+  })
+})
+
+socket.on('messages', function(data) { //data est un tableau donc on fait un forEach récup les données stockés dans le serveur...
+  data.forEach(function(message){
+    addMessage(message)
+  })
+  console.log(data)
+})
+
 socket.on('message', function(value){ //on récupére le message stocké sur le serveur...
-  addMessage(`
-    <div class="message">
-      <div class="avatar">
-        <img src="${value.avatar}" width="40px">
-      </div>
-      <div class="content">
-          <div class="pseudo"> ${value.pseudo} : </div>
-          <div class="text"> ${value.message} </div>
-      </div>
-    </div>
-    `)
+  addMessage(value)
 })
 
 document.querySelector('[data-avatar]').setAttribute('src', avatar)

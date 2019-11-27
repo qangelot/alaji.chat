@@ -58,7 +58,8 @@ body .content {
 .chat {
   background-color: #263238;
   color: #fff;
-  overflow: hidden;
+  overflow-x: hidden;
+  word-break: break-all;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -66,7 +67,7 @@ body .content {
 
 .online .user,
 .chat .messages {
-  overflow: auto;
+  overflow: hidden;
   margin: 0 -15px;
   padding: 0 15px;
 }
@@ -164,4 +165,7 @@ body .content {
 }
 .text{
   font-size: 1.2rem;
+}
+.client{
+  margin: 20px;
 }
