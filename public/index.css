@@ -1,0 +1,149 @@
+body {
+  width: 100vw;
+  height: calc(100vh - 48px);
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+h1, h2 {
+  margin-top: 1rem;
+}
+
+input {
+  outline: none;
+}
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #757575;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+body .content {
+  width: 100%;
+  height: 100%;
+}
+
+.online {
+  background-color: #212121;
+  color: #fff;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat {
+  background-color: #263238;
+  color: #fff;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.online .connected,
+.chat .messages {
+  overflow: auto;
+  margin: 0 -15px;
+  padding: 0 15px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  font-weight: 600;
+}
+
+.user img {
+  width: 32px;
+  margin-right: 12px;
+}
+
+.send {
+  display: flex;
+  align-items: center;
+  height: 48px;
+}
+
+.send input {
+  border: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.init {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #212121;
+}
+
+.init .avatar {
+  cursor: pointer;
+  text-align: center;
+  padding: 0.8rem;
+}
+
+.init .avatar.active {
+  background-color: rgba(158, 158, 158, 0.5);
+  border-radius: 8%;
+}
+
+.init .avatar img {
+  max-width: 300px;
+}
+
+.init form {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.init form input {
+  padding: 0.4rem 1rem;
+  border: 0;
+  border-radius: 4px;
+  font-size: 2rem;
+}
+
+.init form button {
+  margin-left: 1rem;
+  border: 0;
+  padding: 0 1rem;
+  background-color: #e1854f;
+  color: #212121;
+  border-radius: 4px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 600;
+}
